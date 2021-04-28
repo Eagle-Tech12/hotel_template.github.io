@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Template</title>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="D:\bootstrap pratice\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+	<link rel="stylesheet"
+		href="D:\bootstrap pratice\fontawesome-free-5.13.0-web\css\all.min.css">
+
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<style>
+			 body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: gray; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+
+			.container-fluid .nav li a{
+				padding: 15px;
+				font-size: 17px;
+			}
+			.container-fluid .nav li a:hover{
+				background-color: #e3dede;
+				color: #0d0b0b;
+			}
+			.container-fluid .navbar{
+				margin: 0;
+				padding: 0;
+			}
+			.container-fluid .navbar-brand:hover{
+				background-color: #e3dede;
+				color: #0d0b0b;
+			}
+			.container-fluid .navbar-brand{
+				font-size: 20px;
+			}
+			.container-fluid .navbar-brand{
+				background-color: #ff3300;
+				color: #fff;
+			}
+			.container-fluid .home .img-responsive{
+				width: 100%;
+				height: 650px;
+			}
+			.container-fluid .home .table tbody th{
+				background-color: #ff3300;
+				color: #fff;
+				padding: 20px;
+				font-size: 20px;
+			}
+			.container-fluid .home .table{
+				width: 300px;
+				position: absolute;
+				top: 40%;
+				left: 6%;
+			}
+			.container-fluid .home .form{
+				width: 300px;
+				position: absolute;
+				top: 51%;
+				left: 6%;
+				background-color: #fff;
+				padding: 7px;
+			}
+			.container-fluid .room h3,
+			.container-fluid .room p{
+				padding: 20px;
+			}
+			.container-fluid .room h5{
+				margin-left: 20px;
+				opacity: 0.8;
+			}
+			.container-fluid .room h4{
+				margin-left: 20px;
+				margin-top: 25px;
+			}
+			.container-fluid .room .btn{
+				margin-top: 15px;
+				font-size: 18px;
+				margin-bottom: 30px;
+			}
+			.container-fluid .about h3{
+				margin-top: 25px;
+				margin-left: 20px;
+			}
+			.container-fluid .about p{
+				padding: 10px 40px 10px 40px;
+				text-align: justify;
+				font-size: 17px;
+
+			}
+			.container-fluid .about img{
+				float: right;
+			}
+			.container-fluid .about .row .col-md-4 .fa{
+				color: #ff3300;
+			}
+			.container-fluid .about .well{
+				background-color: #ff3300;
+				color: #fff;
+				font-size: 18px;
+				text-align: center;
+				opacity: 0.7;
+			}
+			.container-fluid .about .well:hover{
+				opacity: 1;
+			}
+			.container-fluid .hotel h3{
+				margin-top: 25px;
+				margin-left: 20px;
+			}
+			.container-fluid .hotel .pics-hotel .row .col-md-4 img{
+				width: 100%;
+				height: 200px;
+				margin-top: 20px;
+			}
+			.container-fluid .hotel .pics-hotel .row .col-md-4 img:hover{
+				opacity: 0.7;
+			}
+			.container-fluid .hotel .pics-hotel .row .col-md-4 h4{
+				position: absolute;
+				top: 5%;
+				left: 5%;
+				color: #fff;
+				background-color: #000;
+				padding: 10px;
+			}
+			.container-fluid .offers h2{
+				margin-top: 25px;
+				margin-left: 20px;
+				padding-top: 20px;
+			}
+			.container-fluid .offers h4{
+				margin-left: 20px;
+			}
+			.container-fluid .offers{
+				background-color: #000000;
+				color: #fff;
+				opacity: 0.7;
+			}
+			.container-fluid .offers:hover{
+				opacity: 1;
+			}
+			.container-fluid .offers .form{
+				width: 90%;
+			}
+			.container-fluid .offers .form .form-control{
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+			.container-fluid .offers .form label{
+				margin-left: 40px;
+			}
+			.container-fluid .offers .form .btn{
+				margin-left: 40px;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.container-fluid .contact h3{
+				margin-top: 25px;
+				margin-left: 20px;
+			}
+			.container-fluid .contact h4{
+				margin-top: 25px;
+				margin-left: 20px;
+				font-size: 17px;
+			}
+			.container-fluid .contact p{
+				margin-top: 20px;
+				margin-left: 20px;
+				font-size: 17px;
+
+			}
+			.container-fluid .contact .fa{
+				color: #ff3300;
+			}
+			.container-fluid .contact .btn{
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+			.container-fluid .footer{
+				background-color: #000000;
+				opacity: 0.7;
+			}
+			.container-fluid .footer:hover{
+				opacity: 1;
+			}
+			.container-fluid .footer .fa{
+				color: #fff;
+				opacity: 0.7;
+				padding-bottom: 35px;
+			}
+			.container-fluid .footer h4{
+				padding-top: 35px;
+				color: #fff;
+			}
+			.container-fluid .footer .fa:hover{
+				opacity: 1;
+			}
+			.dark-mode {
+  background-color: black;
+  color: white;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top: 8px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+		</style>
+			
+</head>
+<body  data-spy="scroll" data-offset="100">
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+	<div class="container-fluid">
+		<div class="navbar navbar-default">
+			<div class="navbar-head">
+				
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="" class="navbar-brand"><i class="fa fa-bed" aria-hidden="true"></i>&nbsp;Logo</a>
+			</div>
+			<div id="myNavbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="">Book Now</a></li>
+				<li class="navbar-color"><a href="">Rooms</a></li>
+				<li class="navbar-color"><a href="">About</a></li>
+				<li class="navbar-color"><a href="">Contact</a></li>
+				<li class="navbar-color"><a href="">Contact</a></li>
+				<li class="navbar-color">
+					<label class="switch">
+						<input onclick="myFunction()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</li>
+			</ul>
+			</div>
+		</div>
+				
+		
+
+	<div class="home">
+		<img src="pics\hotel.jpg" class="img-responsive">
+		<table class="table">
+			<tbody>
+				<th><i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;HOTEL NAME</th>
+			</tbody>
+		</table>
+		<form class="form">
+			<div class="form-group">
+					<label>
+						<i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;Check In
+					</label>
+				<input type="text" placeholder="DD MM YY" class="form-control">
+			</div>
+
+		<div class="form-group">
+				<label><i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;Check Out</label>
+			<input type="text" placeholder="DD MM YY" class="form-control">
+		</div>
+
+
+	<div class="form-group">
+			<label><i class="fa fa-male" aria-hidden="true"></i>&nbsp;&nbsp;Adults</label>
+		<input type="text" placeholder="" class="form-control">
+	</div>
+
+
+		<div class="form-group">
+			<label><i class="fa fa-child" aria-hidden="true"></i>&nbsp;&nbsp;Kids</label>
+		<input type="text" placeholder="" class="form-control">
+	</div>
+
+		<button type="button" class="btn btn-danger"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;Search availability</button>
+
+		</form>
+	</div>
+
+		<div class="room">
+			<h3>ROOMS</h3>
+			<p>
+				Make yourself at home is our slogan. We offer the best beds in the industry. Sleep well and rest well.
+			</p>
+
+		<div class="row">
+			<div class="col-md-4">
+			<img src="pics\room-4.jpg" class="img-responsives" 
+				style="width: 100%;height: 200px;">
+				<h3>Single Room</h3>       	
+				<h5>From $99</h5>
+				<h5>Single Bed </h5>
+				<h5>25m*2</h5>
+				<h4>
+				  <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;
+				  <i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;
+				  <i class="fa fa-wifi" aria-hidden="true"></i>
+				</h4>
+				<button type="submit" class="btn btn-success btn-block"> Chose room</button>
+			</div>
+
+
+
+
+			<div class="col-md-4">
+				<img src="pics\room-1.jpg" class="img-responsives" 
+				            style="width: 100%;height: 200px;">
+				     <h3>Double Room</h3>       	
+				     <h5>From $99</h5>
+				     <h5>Double Bed </h5>
+				     <h5>50m*2</h5>
+				     <h4>
+				     	<i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;
+				     	<i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;
+				     	<i class="fa fa-wifi" aria-hidden="true"></i>&nbsp;&nbsp;
+				  		<i class="fa fa-television" aria-hidden="true"></i>
+				     </h4>
+				     <button type="submit" class="btn btn-success btn-block"> Chose room</button>
+			</div>
+	
+
+
+	<div class="col-md-4">
+			<img src="pics\rooms-3.jpg" class="img-responsives" 
+				style="width: 100%;height: 200px;">
+				<h3>Deluxe Room</h3>       	
+				<h5>From $99</h5>
+				<h5>Double Bed </h5>
+				<h5>100m*2</h5>
+				<h4>
+				  <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;
+				  <i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;
+				  <i class="fa fa-wifi" aria-hidden="true"></i>&nbsp;&nbsp;
+				  <i class="fa fa-television" aria-hidden="true"></i>&nbsp;&nbsp;
+				  <i class="fa fa-glass" aria-hidden="true"></i>
+				</h4>
+				<button type="submit" class="btn btn-success btn-block"> Chose room</button>
+			</div>
+
+			</div>
+
+		</div>
+
+
+
+
+		<div class="about">
+			<h3>ABOUT</h3>
+			<p>
+				Our hotel is one of a kind. It is truely amazing. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<br><br>
+				<b>
+					We accept.
+					<i class="fa fa-cc-mastercard" aria-hidden="true"></i>&nbsp;
+					<i class="fa fa-credit-card-alt" aria-hidden="true"></i>&nbsp;
+					<i class="fa fa-cc-visa" aria-hidden="true"></i>&nbsp;
+					<i class="fa fa-paypal" aria-hidden="true"></i>
+				</b>
+			</p>
+
+			<center>
+				<div class="row">
+					<div class="col-md-4">
+						<h4>
+						<i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						13# street Jann <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Muhammad Colony
+					</h4>
+					</div>
+					
+
+			<div class="col-md-4">
+				<h4>
+					<i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+						+923038768152
+				</h4>
+			</div>
+			
+
+		<div class="col-md-4">
+			<h4>
+				<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;
+				E-mail:@mail.com
+			</h4>
+		</div>
+
+
+				</div>
+			</center>
+
+			<div class="well">
+				<q>
+					 On demand, we can offer playstation, babycall, children care, dog equipment, etc.
+				</q>
+			</div>
+
+
+
+
+		</div>
+
+
+
+
+	<div class="hotel">
+		<h3>
+			OUR HOTELS
+		</h3>
+
+		<div class="pics-hotel">
+			<div class="row">
+				<div class="col-md-4">
+					<img src="pics\Cinque-Terre.jpg" class="img-responsive">
+					<h4>
+						Cinque Terre
+					</h4>
+				</div>
+
+			<div class="col-md-4">
+				<img src="pics\new-york.jpg" class="img-responsive">
+				<h4>
+					New York
+				</h4>
+			</div>
+
+		<div class="col-md-4">
+				<img src="pics\San-Francisco.jpg" class="img-responsive">
+				<h4>
+					San Francisco
+				</h4>
+			</div>
+
+			</div>
+
+
+
+		<div class="row">
+				<div class="col-md-4">
+					<img src="pics\Pisa.jpg" class="img-responsive">
+					<h4>
+						Pisa
+					</h4>
+				</div>
+
+			<div class="col-md-4">
+				<img src="pics\Paris.jpg" class="img-responsive">
+				<h4>
+					Paris
+				</h4>
+			</div>
+
+		<div class="col-md-4">
+				<img src="pics\project-6.jpg" class="img-responsive">
+				<h4>
+					Other
+				</h4>
+			</div>
+
+			</div>
+
+
+
+		</div>
+
+
+	</div>
+<br><br>
+
+	<div class="offers">
+		<h2>
+			Get the best offers first!
+		</h2>
+		<br>
+		<h4>
+			Join our newsletter.
+		</h4>
+
+
+		<form class="form">
+			<div class="frm-group">
+				<label>Email:</label>
+				<input type="email" class="form-control input-lg" placeholder="Email" name="">
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-danger btn-lg">Subscribe</button>
+			</div>
+		</form>
+
+
+	</div>
+
+
+
+	<div class="contact">
+		<h3>
+			CONTACT US
+		</h3>
+		<h4>
+			If you have any questions, do not hesitate to ask them.
+		</h4>
+
+		<p>
+		<i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;13# street Jann Muhammad Colony <br>	
+		<i class="fa fa-phone" aria-hidden="true"></i>&nbsp;
+						+923038768152 <br>	
+		<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;
+				E-mail:&nbsp;mail@mail.com
+		</p>
+<br>
+		<form>
+			
+			<div class="form-group">
+				<input type="text" class="form-control input-lg" placeholder="Name" name="">
+			</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control input-lg" placeholder="E-mail" name="">
+		</div>
+
+
+	<div class="form-group">
+			<input type="text" class="form-control input-lg" placeholder="Message" name="">
+		</div>
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-danger btn-lg">Send Message</button>
+		</div>
+
+		</form>
+
+	</div>
+
+	<div class="footer">
+		<center>
+			<h4 class="find">
+				Find Us on
+			</h4>
+			<h3>
+				<i class="fa fa-facebook-f"></i>&nbsp;
+				<i class="fa fa-instagram"></i>&nbsp;
+				<i class="fa fa-google-plus"></i>&nbsp;
+				<i class="fa fa-reddit"></i>&nbsp;
+				<i class="fa fa-twitter"></i>&nbsp;
+
+
+			</h3>
+		</center>
+	</div>
+
+
+
+</div>
+
+
+		<script>
+	function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+
+			<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	
+</body>
+</html>
