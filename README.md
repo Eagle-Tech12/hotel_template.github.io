@@ -1,0 +1,1 @@
+# hotel_template.github.io
